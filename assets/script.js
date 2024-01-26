@@ -4,9 +4,6 @@ var apiKey = "cead2a3023567e3257c8bf4d76c421c3";
 // collect user input for just the city name and store it in a variable,
 
 
-var queryURL ="https://api.openweathermap.org/data/2.5/weather?q=" + "London,GB" + "&appid=" + apiKey;
-
-
 // var queryURL = https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}`
 
 
@@ -18,13 +15,18 @@ $(document).ready(function(){
         var cityInput = $("#search-input").val();
         // alert("this works" + cityInput);
         city=cityInput
-        displayWeather()
+        displayWeather(city)
         });
+
 });
+
 
 // displayWeather () 
 
-function displayWeather () {
+function displayWeather (city) {
+    
+var queryURL ="https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey;
+
 console.log("check")
     fetch(queryURL)
     .then(function (response) { 
