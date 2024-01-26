@@ -27,14 +27,15 @@ function displayWeather (city) {
     
 var queryURL ="https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey;
 
-console.log("check")
+// console.log("check")
     fetch(queryURL)
     .then(function (response) { 
-        console.log("check then")
+        // console.log("check then")
         return response.json();
     })
     .then(function (data) {
-        console.log(data)
+        showData(data)
+        console.log(data, "this is the data")
 
  
 //need to find arrays
@@ -42,11 +43,24 @@ console.log("check")
             
             // $("#articles").append('<a href="' + data.response.docs[i].web_url + '">' + data.response.docs[i].headline.main + '</a>');
             // $("#articles").append('<br>');
+          
+
 
         }
     });
 
 }
+
+function showData (data) {
+    // console.log("last function")
+    $(".test").append(data.name);
+
+}
+
+
+// $(".test").html("<h1>" + data.name + " Weather Details</h1>");
+
+// displaydata()
 
 // prevent default means dont refresh page. 
 
