@@ -53,7 +53,11 @@ var queryURL ="https://api.openweathermap.org/data/2.5/weather?q=" + city + "&ap
 
 function showData (data) {
     // console.log("last function")
-    $(".test").append(data.name);
+    // $(".test").append(data.main.temp);
+    $(".location").append (data.name + "( + date will go here)");
+    $(".temp").append (data.main.temp)
+    $(".wind").append (data.wind.speed)
+    $(".humidity").append (data.main.humidity)
 
 }
 
