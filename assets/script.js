@@ -3,6 +3,7 @@ var apiKey = "cead2a3023567e3257c8bf4d76c421c3";
 var date = dayjs().format("DD MM YYYY");
 
 
+
 // collect user input for just the city name and store it in a variable,
 
 
@@ -11,6 +12,7 @@ var date = dayjs().format("DD MM YYYY");
 
 $(document).ready(function(){
     var city;
+    var lat;
     // Get value on button click and show alert
     $("#search-button").click(function(event){
         event.preventDefault()
@@ -40,9 +42,7 @@ var queryURL ="https://api.openweathermap.org/data/2.5/weather?q=" + city + "&ap
         console.log(data, "this is the data")
 
 
-        fetch 
-
-        fetch("http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={cead2a3023567e3257c8bf4d76c421c3}")
+        fetch("http://api.openweathermap.org/geo/1.0/reverse?lat=" + lat + "&lon=" + lon + "&limit=" + limit + "&appid=" + apiKey)
         .then(function (response) { 
             console.log("geoapi")
             return response.json();
@@ -52,7 +52,7 @@ var queryURL ="https://api.openweathermap.org/data/2.5/weather?q=" + city + "&ap
             console.log(data, "this is the  geo data")
 
 
-        fetch("https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={cead2a3023567e3257c8bf4d76c421c3")
+        fetch("https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + apiKey)
         .then(function (response) { 
             console.log("secondapi")
             return response.json();
@@ -67,6 +67,7 @@ var queryURL ="https://api.openweathermap.org/data/2.5/weather?q=" + city + "&ap
             
         }
     });
+
 
 })
 })
