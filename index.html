@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <header class="container-fluid text-center text-white bg-primary p-2 weather-header">
+  <header class="container-fluid text-center text-white p-2 weather-header future">
     <h1>Weather Dashboard</h1>
   </header>
 
@@ -29,20 +29,22 @@
               <input class="form-input weather-search" type="text" id="search-input" placeholder="London"
                 aria-labelledby="form-heading" aria-controls="today forecast" />
 
-
               <div class="input-group-append">
                 <button type="submit" class="btn search-button btn-primary" id="search-button" aria-label="submit search">
                   Search
                 </button>
 
                 <hr class="hr weather-hr" />
-                <H1>HISTORY BUTTON</H1>
+                
+
                 
               </div>
             </div>
           </div>
         </form>
-        <div class="list-group" id="history"></div>
+        <div class="list-group" id="history">
+          <p>HISTORY BUTTONs</p>
+        </div>
       </aside>
 
 
@@ -58,51 +60,66 @@
             <h5 class="card-title location"></h5>
             <p class="card-text temp">Temp: </p>
             <p class="card-text wind">Wind: </p>
-            <p class="card-text humidity"> Humidity:</p>
+            <p class="card-text humidity"> Humidity: </p>
           </div>
         </section>
 
         <section id="forecast" class="row mt-3" role="region" aria-live="polite"></section>
-        <h1>5 DAY ORECAST</h1>
+        <h2>5-Day Forecast:</h2>
         
         <div class="row row-cols-1 row-cols-md-5" >
           <div class="col mb-2">
-            <div class="card bg-primary text-white">
+            <div class="card future text-white">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content..</p>
+                <h5 class="card-title">date</h5>
+                <p class="card-text forecastimg1">img: </p>
+                <p class="card-text forecasttemp1">Temp: </p>
+                <p class="card-text forecastwind1">Wind: </p>
+                <p class="card-text forecasthumidity1"> Humidity: </p>
               </div>
             </div>
           </div>
           <div class="col mb-2">
-            <div class="card bg-primary text-white">
+            <div class="card future text-white">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                <h5 class="card-title">date</h5>
+                <p class="card-text forecastimg2">img: </p>
+                <p class="card-text forecasttemp2">Temp: </p>
+                <p class="card-text forecastwind2">Wind: </p>
+                <p class="card-text forecasthumidity2"> Humidity: </p>
               </div>
             </div>
           </div>
           <div class="col mb-2">
-            <div class="card bg-primary text-white">
+            <div class="card future text-white">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                <h5 class="card-title">date</h5>
+                <p class="card-text forecastimg3">img: </p>
+                <p class="card-text forecasttemp3">Temp: </p>
+                <p class="card-text forecastwind3">Wind: </p>
+                <p class="card-text forecasthumidity3"> Humidity: </p>
               </div>
             </div>
           </div>
           <div class="col mb-2">
-            <div class="card bg-primary text-white">
+            <div class="card future text-white">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                <h5 class="card-title">date</h5>
+                <p class="card-text forecastimg4">img: </p>
+                <p class="card-text forecasttemp4">Temp: </p>
+                <p class="card-text forecastwind4">Wind: </p>
+                <p class="card-text forecasthumidity4"> Humidity: </p>
               </div>
             </div>
           </div>
           <div class="col mb-2">
-            <div class="card bg-primary text-white">
+            <div class="card text-white future">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                <h5 class="card-title">date</h5>
+                <p class="card-text forecastimg5">img: </p>
+                <p class="card-text forecasttemp5">Temp: </p>
+                <p class="card-text forecastwind5">Wind: </p>
+                <p class="card-text forecasthumidity5"> Humidity: </p>
               </div>
             </div>
           </div>

@@ -39,34 +39,70 @@ var queryURL ="https://api.openweathermap.org/data/2.5/weather?q=" + city + "&ap
         showData(data)
         console.log(data, "this is the data")
 
- 
+
+        fetch 
+
+        fetch("http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={cead2a3023567e3257c8bf4d76c421c3}")
+        .then(function (response) { 
+            console.log("geoapi")
+            return response.json();
+        })
+        .then(function (data) {
+            showData(data)
+            console.log(data, "this is the  geo data")
+
+
+        fetch("https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={cead2a3023567e3257c8bf4d76c421c3")
+        .then(function (response) { 
+            console.log("secondapi")
+            return response.json();
+        })
+        .then(function (data) {
+            showData(data)
+            console.log(data, "this is 5day  data")
+
+
 //need to find arrays
         for (var i = 0; i < data.length; i++) {
             
-            // $("#articles").append('<a href="' + data.response.docs[i].web_url + '">' + data.response.docs[i].headline.main + '</a>');
-            // $("#articles").append('<br>');
-          
-
-
         }
     });
 
+})
+})
 }
 
 function showData (data) {
     // console.log("last function")
     // $(".test").append(data.main.temp);
     $(".location").append (data.name + " " + date);
-    $(".temp").append (data.main.temp)
+    $(".temp").append (data.main.temp )
     $(".wind").append (data.wind.speed)
     $(".humidity").append (data.main.humidity)
 
 }
 
 
-// $(".test").html("<h1>" + data.name + " Weather Details</h1>");
+// var nextday= dayjs().calendar(null, {
+//     nextDay: '[Tomorrow]'
+//   })
 
-// displaydata()
+
+// function showForecast (data) {
+// var URL = api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={cead2a3023567e3257c8bf4d76c421c3}
+// fetch(URL)
+// .then(function (re sponse) { 
+//     // console.log("check then")
+//     return response.json();
+// })
+// .then(function (data) {
+//     showData(data)
+//     console.log(data, "this future dates")
+
+// }
+
+
+
 
 // prevent default means dont refresh page. 
 
@@ -90,20 +126,5 @@ function showData (data) {
 
 //     // add temp content to html
 //     $(".temp").text("Temperature (K) " + data.main.temp);
-//     $(".tempC").text("Temperature (C) " + tempC.toFixed(2));
-
-//     // Log the data in the console as well
-//     console.log("Wind Speed: " + data.wind.speed);
-//     console.log("Humidity: " + data.main.humidity);
-//     console.log("Temperature (C): " + tempC);
-//   });
-
-
-
-
-// https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
-
-//to do
-// add buttons task
-//bring in images
-//use css to style
+    // $(".tempC").text("Temperature (C) " + tempC.toFixed(2))
+//     // Log the resulting object
