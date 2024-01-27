@@ -1,5 +1,7 @@
 // API key
 var apiKey = "cead2a3023567e3257c8bf4d76c421c3";
+var date = dayjs().format("DD MM YYYY");
+
 
 // collect user input for just the city name and store it in a variable,
 
@@ -54,7 +56,7 @@ var queryURL ="https://api.openweathermap.org/data/2.5/weather?q=" + city + "&ap
 function showData (data) {
     // console.log("last function")
     // $(".test").append(data.main.temp);
-    $(".location").append (data.name + "( + date will go here)");
+    $(".location").append (data.name + " " + date);
     $(".temp").append (data.main.temp)
     $(".wind").append (data.wind.speed)
     $(".humidity").append (data.main.humidity)
