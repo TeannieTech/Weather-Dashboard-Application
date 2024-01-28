@@ -42,23 +42,23 @@ var queryURL ="https://api.openweathermap.org/data/2.5/weather?q=" + city + "&ap
         console.log(data, "this is the data")
 
 
-        fetch("http://api.openweathermap.org/geo/1.0/reverse?lat=" + lat + "&lon=" + lon + "&limit=" + limit + "&appid=" + apiKey)
-        .then(function (response) { 
-            console.log("geoapi")
-            return response.json();
-        })
-        .then(function (data) {
-            showData(data)
-            console.log(data, "this is the  geo data")
+        // fetch("http://api.openweathermap.org/geo/1.0/reverse?lat=" + lat + "&lon=" + lon + "&limit=" + limit + "&appid=" + apiKey)
+        // .then(function (response) { 
+        //     console.log("geoapi")
+        //     return response.json();
+        // })
+        // .then(function (data) {
+        //     showData(data)
+        //     console.log(data, "this is the  geo data")
 
 
-        fetch("https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + apiKey)
+        fetch("https://api.openweathermap.org/data/2.5/forecast?lat=" + data.coord.lat + "&lon=" + data.coord.lon + "&appid=" + apiKey)
         .then(function (response) { 
             console.log("secondapi")
             return response.json();
         })
         .then(function (data) {
-            showData(data)
+            // showData(data)
             console.log(data, "this is 5day  data")
 
 
@@ -69,7 +69,6 @@ var queryURL ="https://api.openweathermap.org/data/2.5/weather?q=" + city + "&ap
     });
 
 
-})
 })
 }
 
