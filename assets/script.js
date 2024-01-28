@@ -16,6 +16,7 @@ $(document).ready(function () {
     // alert("this works" + cityInput);
     city = cityInput;
     displayWeather(city);
+    createButton(city)
   });
 });
 
@@ -85,13 +86,35 @@ function showFiveDay(data5) {
 }
 
 //NEW BUTTONS - call function inside event listener
-// var newButtons []
 
-// function createButton {
+function createButton(city) {
+
+var newButtons = [city]
+
+
+  // movie buttins
+  for (var i = 0; i < newButtons.length; i++) {
+
+    var a = $("<button>");
+    // Adding a class
+    a.addClass("added-button");
+    // Adding a data-attribute with a value of the movie at index i
+    a.attr("added-button", newButtons[i]);
+    // Providing the button's text with a value of the movie at index i
+    a.text(newButtons[i]);
+    // Adding the button to the HTML
+    $("#history").append(a);
+  }
+}
+
+
+
+
 
 // addButton= $(“<button>”)
 // addButton.text(“testbutton”)
 // $(‘body’).append(history)
+// $('<button>Test</button>')
 
 //add event listener or add to old event listener
 
