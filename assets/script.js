@@ -20,8 +20,8 @@ $(document).ready(function(){
         // alert("this works" + cityInput);
         city=cityInput
         displayWeather(city)
-        });
-
+        
+    });
 });
 
 
@@ -40,17 +40,6 @@ var queryURL ="https://api.openweathermap.org/data/2.5/weather?q=" + city + "&ap
     .then(function (data) {
         showData(data)
         console.log(data, "this is the data")
-
-
-        // fetch("http://api.openweathermap.org/geo/1.0/reverse?lat=" + lat + "&lon=" + lon + "&limit=" + limit + "&appid=" + apiKey)
-        // .then(function (response) { 
-        //     console.log("geoapi")
-        //     return response.json();
-        // })
-        // .then(function (data) {
-        //     showData(data)
-        //     console.log(data, "this is the  geo data")
-
 
         fetch("https://api.openweathermap.org/data/2.5/forecast?lat=" + data.coord.lat + "&lon=" + data.coord.lon + "&appid=" + apiKey)
         .then(function (response) { 
@@ -73,14 +62,45 @@ var queryURL ="https://api.openweathermap.org/data/2.5/weather?q=" + city + "&ap
 }
 
 function showData (data) {
-    // console.log("last function")
-    // $(".test").append(data.main.temp);
+
     $(".location").append (data.name + " " + date);
     $(".temp").append (data.main.temp )
     $(".wind").append (data.wind.speed)
     $(".humidity").append (data.main.humidity)
 
+    //5day data
+    // $(".forecastimg1").append (data.list.main.temp)
+
 }
+
+
+
+//NEW BUTTONS - call function inside event listener
+// var newButtons []
+
+// function createButton {
+
+
+// addButton= $(“<button>”)
+// addButton.text(“testbutton”)
+// $(‘body’).append(history)
+
+
+//add event listener or add to old event listener
+
+//for loop 
+// for (var i = 0; i < newButtons.length; i++) {
+
+            
+// }
+// }
+
+
+
+
+//display buttons
+
+
 
 
 // var nextday= dayjs().calendar(null, {
@@ -128,3 +148,5 @@ function showData (data) {
 //     $(".temp").text("Temperature (K) " + data.main.temp);
     // $(".tempC").text("Temperature (C) " + tempC.toFixed(2))
 //     // Log the resulting object
+
+
