@@ -11,3 +11,9 @@ body {
 /* .fade {
     background-color: linear-gradient(to right, rgb(244,242,242) 0%,rgb(53,49,74) 97%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 /* } */
+
+hr {
+    width:50%;
+    text-align:left;
+    margin-left:0"
+}

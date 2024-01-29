@@ -1,146 +1,170 @@
 <!DOCTYPE html>
 <html lang="en-gb">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <title>Weather Dashboard</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-  <link rel="stylesheet" href="./styles/reset.css">
-  <title>Weather Dashboard</title>
-</head>
+  <body>
+    <header
+      class="container-fluid text-center text-white p-2 weather-header future"
+    >
+      <h1>Weather Dashboard</h1>
+    </header>
 
-<body>
-  <header class="container-fluid text-center text-white p-2 weather-header future">
-    <h1>Weather Dashboard</h1>
-  </header>
-
-<section>
-  <!-- max-width for ultra wide resolutions -->
-  <div class="container-fluid" style="max-width: 1400px">
-    <div class="row">
-      <aside class="col-lg-3 pb-3">
-        <h2 id="form-heading" class="mt-1 h3 form-label">
-          Search for a City:
-        </h2>
-        <form id="search-form" class="form">
-          <div class="form-inline form-group">
-            <div class="input-group">
-              <input class="form-input weather-search" type="text" id="search-input" placeholder="London"
-                aria-labelledby="form-heading" aria-controls="today forecast" />
-
-              <div class="input-group-append">
-                <button type="submit" class="btn search-button btn-primary" id="search-button" aria-label="submit search">
+    <section>
+      <!-- max-width for ultra wide resolutions -->
+      <div class="container-fluid" style="max-width: 1400px">
+        <div class="row">
+          <aside class="col-lg-3 pb-3">
+            <h2 id="form-heading" class="mt-1 h3 form-label">
+              Search for a City:
+            </h2>
+            <form id="search-form" class="form">
+              <div class="form-inline form-group">
+                <div class="input-group">
+                  <input
+                    class="form-input weather-search"
+                    type="text"
+                    id="search-input"
+                    placeholder="Enter City"
+                    aria-labelledby="form-heading"
+                    aria-controls="today forecast"
+                  />
+                  <div class="input-group-append">
+                    <!-- <button type="submit" class="btn search-button btn-primary" id="search-button" aria-label="submit search">
                   Search
-                </button>
-
-                <hr class="hr weather-hr" />
-                
-
-                
+                </button> -->
+                    <hr class="hr weather-hr" />
+                  </div>
+                </div>
               </div>
+              <button
+                type="submit"
+                class="btn search-button btn-primary btn-block"
+                id="search-button"
+                aria-label="submit search"
+              >
+                Search
+              </button>
+            </form>
+            <div class="list-group text-center" id="history">
+              <p>Previous Searches</p>
             </div>
-          </div>
-        </form>
-        <div class="list-group" id="history">
-          <p>HISTORY BUTTONs</p>
-        </div>
-      </aside>
+          </aside>
 
+          <div class="col-lg-9 pb-3">
+            <section
+              id="today"
+              class="mt-3 todaysection"
+              role="region"
+              aria-live="polite"
+            >
+              <h1>TODAY</h1>
+            </section>
 
+            <section>
+              <div class="card mb-3">
+                <div class="card-body">
+                  <img class="todayimg"></img>
+                    <h5 class="card-title location"></h5>
+                    <p class="card-text temp">Temp:</p>
+                    <p class="card-text wind">Wind:</p>
+                    <p class="card-text humidity">Humidity:</p>
+                </div>
+              </div>
+            </section>
 
-      <div class="col-lg-9 pb-3">
-        <section id="today" class="mt-3 todaysection" role="region" aria-live="polite">
-          <h1>TODAY</h1>
-        </section>
-      
- <section>
-        <div class="card mb-3">
-          <div class="card-body">
-            <h5 class="card-title location"></h5>
-            <p class="card-text temp">Temp: </p>
-            <p class="card-text wind">Wind: </p>
-            <p class="card-text humidity"> Humidity: </p>
-          </div>
-        </section>
+            <section
+              id="forecast"
+              class="row mt-3"
+              role="region"
+              aria-live="polite"
+            ></section>
+            <h2>5-Day Forecast:</h2>
 
-        <section id="forecast" class="row mt-3" role="region" aria-live="polite"></section>
-        <h2>5-Day Forecast:</h2>
-        
-        <div class="row row-cols-1 row-cols-md-5" >
-          <div class="col mb-2">
-            <div class="card future text-white">
-              <div class="card-body">
-                <h5 class="card-title">date</h5>
-                <p class="card-text forecastimg1">img: </p>
-                <p class="card-text forecasttemp1">Temp: </p>
-                <p class="card-text forecastwind1">Wind: </p>
-                <p class="card-text forecasthumidity1"> Humidity: </p>
+            <div class="row row-cols-1 row-cols-md-5">
+              <div class="col mb-2">
+                <div class="card future text-white">
+                  <div class="card-body">
+                    <h5 class="card-title day1">date</h5>
+                    <p class="card-text forecastimg1">img:</p>
+                    <p class="card-text forecasttemp1">Temp:</p>
+                    <p class="card-text forecastwind1">Wind:</p>
+                    <p class="card-text forecasthumidity1">Humidity:</p>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="col mb-2">
-            <div class="card future text-white">
-              <div class="card-body">
-                <h5 class="card-title">date</h5>
-                <p class="card-text forecastimg2">img: </p>
-                <p class="card-text forecasttemp2">Temp: </p>
-                <p class="card-text forecastwind2">Wind: </p>
-                <p class="card-text forecasthumidity2"> Humidity: </p>
+              <div class="col mb-2">
+                <div class="card future text-white">
+                  <div class="card-body">
+                    <h5 class="card-title day2">date</h5>
+                    <p class="card-text forecastimg2">img:</p>
+                    <p class="card-text forecasttemp2">Temp:</p>
+                    <p class="card-text forecastwind2">Wind:</p>
+                    <p class="card-text forecasthumidity2">Humidity:</p>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="col mb-2">
-            <div class="card future text-white">
-              <div class="card-body">
-                <h5 class="card-title">date</h5>
-                <p class="card-text forecastimg3">img: </p>
-                <p class="card-text forecasttemp3">Temp: </p>
-                <p class="card-text forecastwind3">Wind: </p>
-                <p class="card-text forecasthumidity3"> Humidity: </p>
+              <div class="col mb-2">
+                <div class="card future text-white">
+                  <div class="card-body">
+                    <h5 class="card-title day3">date</h5>
+                    <p class="card-text forecastimg3">img:</p>
+                    <p class="card-text forecasttemp3">Temp:</p>
+                    <p class="card-text forecastwind3">Wind:</p>
+                    <p class="card-text forecasthumidity3">Humidity:</p>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="col mb-2">
-            <div class="card future text-white">
-              <div class="card-body">
-                <h5 class="card-title">date</h5>
-                <p class="card-text forecastimg4">img: </p>
-                <p class="card-text forecasttemp4">Temp: </p>
-                <p class="card-text forecastwind4">Wind: </p>
-                <p class="card-text forecasthumidity4"> Humidity: </p>
+              <div class="col mb-2">
+                <div class="card future text-white">
+                  <div class="card-body">
+                    <h5 class="card-title day4">date</h5>
+                    <p class="card-text forecastimg4">img:</p>
+                    <p class="card-text forecasttemp4">Temp:</p>
+                    <p class="card-text forecastwind4">Wind:</p>
+                    <p class="card-text forecasthumidity4">Humidity:</p>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="col mb-2">
-            <div class="card text-white future">
-              <div class="card-body">
-                <h5 class="card-title">date</h5>
-                <p class="card-text forecastimg5">img: </p>
-                <p class="card-text forecasttemp5">Temp: </p>
-                <p class="card-text forecastwind5">Wind: </p>
-                <p class="card-text forecasthumidity5"> Humidity: </p>
+              <div class="col mb-2">
+                <div class="card text-white future">
+                  <div class="card-body">
+                    <h5 class="card-title day5">date</h5>
+                    <p class="card-text forecastimg5">img:</p>
+                    <p class="card-text forecasttemp5">Temp:</p>
+                    <p class="card-text forecastwind5">Wind:</p>
+                    <p class="card-text forecasthumidity5">Humidity:</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  </section>
+    </section>
 
-  <!-- <section>
+    <!-- <section>
     <h1 class="test">
       <p>test</p>
       
     </h1>
   </section> -->
 
-  <!-- Day.js -->
-  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
-  <!-- jQuery -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="/assets/script.js"></script>
-</body>
-
+    <!-- Day.js -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/assets/script.js"></script>
+  </body>
 </html>

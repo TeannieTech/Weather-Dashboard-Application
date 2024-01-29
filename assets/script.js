@@ -68,9 +68,10 @@ function displayWeather(city) {
 
 function showData(data) {
   $(".location").append(data.name + " " + date);
-  $(".temp").append(data.main.temp);
+  $(".temp").append(data.main.temp + "ºC");
   $(".wind").append(data.wind.speed);
   $(".humidity").append(data.main.humidity);
+  $(".todayimg").append(data.weather[0].icon);
 
   //5day data
   // $(".forecastimg1").append (data.list.[0]main.temp)
@@ -80,17 +81,23 @@ function showFiveDay(data5) {
   console.log(data5.list[0].main.temp, "show data");
 
   for (var i = 0; i < data5.list.length; i=i+8) {
-    console.log(data5.list[i].main.temp, "5days", data5.list[i].dt_txt);
+    // console.log(data5.list[i].main.temp, "5days", data5.list[i].dt_txt);
     console.log(dayjs.unix(data5.list[i].dt).format("DD MM YYYY"))
+
+ $(".day1").append(dayjs.unix(data5.list[i].dt).format("DD MM YYYY"))
+ // $(".day2").append(data.main.temp);
+// $(".day3").append(data.main.temp);
+// $(".day4").append(data.main.temp);
+// $(".day5").append(data.main.temp);
   }
 }
+
 
 //NEW BUTTONS - call function inside event listener
 
 function createButton(city) {
 
 var newButtons = [city]
-
 
   // movie buttins
   for (var i = 0; i < newButtons.length; i++) {
@@ -106,7 +113,6 @@ var newButtons = [city]
     $("#history").append(a);
   }
 }
-
 
 
 
