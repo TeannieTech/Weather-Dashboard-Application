@@ -16,21 +16,15 @@ $(document).ready(function () {
     // alert("this works" + cityInput);
     city = cityInput;
     displayWeather(city);
-    createButton(city)
+    createButton(city);
   });
 });
 
 // displayWeather ()
 
 function displayWeather(city) {
-  var queryURL =
-    "https://api.openweathermap.org/data/2.5/weather?q=" +
-    city +
-    "&appid=" +
-    apiKey +
-    "&units=metric";
+  var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey + "&units=metric";
 
-  // console.log("check")
   fetch(queryURL)
     .then(function (response) {
       // console.log("check then")
@@ -41,14 +35,7 @@ function displayWeather(city) {
       console.log(data, "this is the data");
 
       fetch(
-        "https://api.openweathermap.org/data/2.5/forecast?lat=" +
-          data.coord.lat +
-          "&lon=" +
-          data.coord.lon +
-          "&appid=" +
-          apiKey +
-          "&units=metric"
-      )
+        "https://api.openweathermap.org/data/2.5/forecast?lat=" + data.coord.lat + "&lon=" + data.coord.lon + "&appid=" + apiKey + "&units=metric")
         .then(function (response) {
           console.log("secondapi");
           return response.json();
@@ -58,12 +45,19 @@ function displayWeather(city) {
           console.log(data, "this is 5day  data");
           showFiveDay(data);
 
-          // need to find arrays - for 5 day??
-          //         for (var i = 0; i < data.length; i++) {
 
-          //         }
+        fetch("https://samples.openweathermap.org/data/2.5/weather?q=London&appid=b1b15e88fa797225412429c1c50c122a1")
+            .then(function (response) {
+              console.log("icons");
+              return response.json();
+            })
+            .then(function (data) {
+              console.log(data, "this is icons");
+            //   showFiveDay(data);
+
         });
     });
+})
 }
 
 function showData(data) {
@@ -80,28 +74,25 @@ function showData(data) {
 function showFiveDay(data5) {
   console.log(data5.list[0].main.temp, "show data");
 
-  for (var i = 0; i < data5.list.length; i=i+8) {
+  for (var i = 0; i < data5.list.length; i = i + 8) {
     // console.log(data5.list[i].main.temp, "5days", data5.list[i].dt_txt);
-    console.log(dayjs.unix(data5.list[i].dt).format("DD MM YYYY"))
+    console.log(dayjs.unix(data5.list[i].dt).format("DD MM YYYY"));
 
- $(".day1").append(dayjs.unix(data5.list[i].dt).format("DD MM YYYY"))
- // $(".day2").append(data.main.temp);
-// $(".day3").append(data.main.temp);
-// $(".day4").append(data.main.temp);
-// $(".day5").append(data.main.temp);
+    $(".day1").append(dayjs.unix(data5.list[i].dt).format("DD MM YYYY"));
+    // $(".day2").append(data.main.temp);
+    // $(".day3").append(data.main.temp);
+    // $(".day4").append(data.main.temp);
+    // $(".day5").append(data.main.temp);
   }
 }
-
 
 //NEW BUTTONS - call function inside event listener
 
 function createButton(city) {
-
-var newButtons = [city]
+  var newButtons = [city];
 
   // movie buttins
   for (var i = 0; i < newButtons.length; i++) {
-
     var a = $("<button>");
     // Adding a class
     a.addClass("added-button");
@@ -113,9 +104,6 @@ var newButtons = [city]
     $("#history").append(a);
   }
 }
-
-
-
 
 // addButton= $(“<button>”)
 // addButton.text(“testbutton”)
