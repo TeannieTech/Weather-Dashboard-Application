@@ -1,6 +1,12 @@
-body {
+/* body {
     background-image: url(/assets/backgrounglight.png);
    background-size: cover;
+} */
+
+
+body {
+    background-image: url(/assets/backgroundlight.png);
+    background-size: cover;
 }
 
 
@@ -32,3 +38,8 @@ line {
     margin: 1rem 0;
     color: black
 }
+
+/* .currentdata {
+    background-image: url(/assets/OFJWCG0.jpg);
+    background-color:transparent;
+} */
