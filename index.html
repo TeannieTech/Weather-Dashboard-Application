@@ -16,9 +16,17 @@
 
   <body>
     <header
-      class="container-fluid text-center text-white p-2 weather-header future"
-    >
-      <h1>Weather Dashboard</h1>
+      class="container-fluid text-center p-2 weather-header future"
+    ><!-- Image and text -->
+<nav class="navbar navbar-light">
+  <a class="navbar-brand text-white" href="#">
+    <img src="./assets/daylight-sun-cloud-icon-original (1).svg" width="30" height="30" class="d-inline-block align-top" alt="">
+     FIND MY WEATHER
+  </a>
+
+  
+</nav>
+      <!-- <h1>Weather Dashboard</h1> -->
     </header>
 
     <section>
@@ -44,7 +52,9 @@
                     <!-- <button type="submit" class="btn search-button btn-primary" id="search-button" aria-label="submit search">
                   Search
                 </button> -->
-                    <hr class="hr weather-hr" />
+      <div>
+      <hr class="hr weather-hr line">
+      </div>
                   </div>
                 </div>
               </div>
@@ -77,9 +87,10 @@
                 <div class="card-body">
                   <img class="todayimg"></img>
                     <h5 class="card-title location"></h5>
-                    <p class="card-text temp">Temp:</p>
-                    <p class="card-text wind">Wind:</p>
-                    <p class="card-text humidity">Humidity:</p>
+                    <p class="todaydate"></p>
+                    <p class="card-text temp"></p>
+                    <p class="card-text wind"></p>
+                    <p class="card-text humidity"></p>
                 </div>
               </div>
             </section>
@@ -105,7 +116,7 @@
                 </div>
               </div>
               <div class="col mb-2">
-                <div class="card future text-white">
+                <div class="card future1 text-white">
                   <div class="card-body">
                     <h5 class="card-title day2">date</h5>
                     <p class="card-text forecastimg2">img:</p>
@@ -116,7 +127,7 @@
                 </div>
               </div>
               <div class="col mb-2">
-                <div class="card future text-white">
+                <div class="card future2 text-white">
                   <div class="card-body">
                     <h5 class="card-title day3">date</h5>
                     <p class="card-text forecastimg3">img:</p>
@@ -127,7 +138,7 @@
                 </div>
               </div>
               <div class="col mb-2">
-                <div class="card future text-white">
+                <div class="card future3 text-white">
                   <div class="card-body">
                     <h5 class="card-title day4">date</h5>
                     <p class="card-text forecastimg4">img:</p>
@@ -138,7 +149,7 @@
                 </div>
               </div>
               <div class="col mb-2">
-                <div class="card text-white future">
+                <div class="card text-white future4">
                   <div class="card-body">
                     <h5 class="card-title day5">date</h5>
                     <p class="card-text forecastimg5">img:</p>

@@ -1,6 +1,6 @@
 // API key
 var apiKey = "cead2a3023567e3257c8bf4d76c421c3";
-var date = dayjs().format("DD MM YYYY");
+var date = dayjs().format("DD-MM-YYYY");
 
 // collect user input for just the city name and store it in a variable,
 
@@ -38,6 +38,7 @@ function displayWeather(city) {
         "https://api.openweathermap.org/data/2.5/forecast?lat=" + data.coord.lat + "&lon=" + data.coord.lon + "&appid=" + apiKey + "&units=metric")
         .then(function (response) {
           console.log("secondapi");
+          // does this need to be json.prson for date
           return response.json();
         })
         .then(function (data) {
@@ -46,26 +47,32 @@ function displayWeather(city) {
           showFiveDay(data);
 
 
-        fetch("https://samples.openweathermap.org/data/2.5/weather?q=London&appid=b1b15e88fa797225412429c1c50c122a1")
-            .then(function (response) {
-              console.log("icons");
-              return response.json();
-            })
-            .then(function (data) {
-              console.log(data, "this is icons");
-            //   showFiveDay(data);
+        // fetch("https://samples.openweathermap.org/data/2.5/weather?q= + London + "&appid=" + apiKey")
+        //     .then(function (response) {
+        //       console.log("icons");
+        //       return response.json();
+        //     })
+        //     .then(function (data) {
+        //       console.log(data, "this is icons");
+        //     //   showFiveDay(data);
 
-        });
+        // });
     });
 })
 }
 
 function showData(data) {
-  $(".location").append(data.name + " " + date);
-  $(".temp").append(data.main.temp + "ºC");
-  $(".wind").append(data.wind.speed);
-  $(".humidity").append(data.main.humidity);
-  $(".todayimg").append(data.weather[0].icon);
+// $(".todayimg").append(data.weather[0].icon);
+  $(".location").append(data.name + " ")
+  $(".todaydate").append(date);
+  $(".temp").append("Temp: " + Math.floor(data.main.temp) + "ºC");
+  $(".wind").append ("Wind: " + data.wind.speed);
+  $(".humidity").append("Humidity: " + data.main.humidity);
+
+
+
+
+
 
   //5day data
   // $(".forecastimg1").append (data.list.[0]main.temp)

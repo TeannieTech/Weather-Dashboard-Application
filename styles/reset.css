@@ -8,12 +8,27 @@ body {
     background-color:rgb(53, 49, 74)
 }
 
+.future1 {
+    background-color: rgb(64, 57, 97)
+}
+
+.future2 {
+    background-color: rgb(72, 60, 133)
+}
+
+.future3 {
+    background-color: rgb(75, 53, 184)
+}
+
+.future4 {
+    background-color: rgb(83, 55, 224)
+}
+
 /* .fade {
     background-color: linear-gradient(to right, rgb(244,242,242) 0%,rgb(53,49,74) 97%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 /* } */
 
-hr {
-    width:50%;
-    text-align:left;
-    margin-left:0"
+line {
+    margin: 1rem 0;
+    color: black
 }
