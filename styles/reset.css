@@ -39,11 +39,16 @@ line {
     color: black
 }
 
-/* .currentdata {
-    background-image: url(/assets/OFJWCG0.jpg);
-    background-color:transparent;
-} */
+/* .mb-3 {
+    /* background-image: url(/assets/logolight.png);
+    background-repeat: no-repeat; */
+    /* background-size: 30%; */
+    /* height: 250px; */
+/* 
+}  */ 
 
 .added-button {
     margin-bottom: 10px;
+
 }
+

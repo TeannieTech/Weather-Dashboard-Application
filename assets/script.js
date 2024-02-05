@@ -79,18 +79,49 @@ function showData(data) {
 }
 
 function showFiveDay(data5) {
-  console.log(data5.list[0].main.temp, "show data");
+  // console.log(data5.list[0].main.temp, "show data");
 
-  for (var i = 0; i < data5.list.length; i = i + 8) {
+  console.log(data5, "5day data")
+
+  for (var i = 8; i < data5.list.length; i = i + 8) {
     // console.log(data5.list[i].main.temp, "5days", data5.list[i].dt_txt);
     console.log(dayjs.unix(data5.list[i].dt).format("DD MM YYYY"));
+    // let fiveDayArray = dayjs.unix(data5.list[i].dt).format("DD MM YYYY")
+    let fiveCard = ""
+    // for(let i=0;i<fiveDayArray.length;i++){
+  fiveCard+=`
+  <div class="col mb-2 five">
+  <div class="card future1 text-white">
+    <div class="card-body">
+      <h5 class="card-title day">date ${dayjs.unix(data5.list[i].dt).format("DD MM YYYY")}</h5>
+      <p class="card-text forecastimg2">img:</p>
+      <p class="card-text forecasttemp2">Temp:</p>
+      <p class="card-text forecastwind2">Wind:</p>
+      <p class="card-text forecasthumidity2">Humidity:</p>
+    </div>
+  </div>
+  </div>
+  `
+  $(".forecast").html(fiveCard)
+    }
+// appendDay(fiveDayArray)
+  // }
+}
 
-    $(".day1").append(dayjs.unix(data5.list[i].dt).format("DD MM YYYY"));
-    // $(".day2").append(data.main.temp);
-    // $(".day3").append(data.main.temp);
-    // $(".day4").append(data.main.temp);
-    // $(".day5").append(data.main.temp);
-  }
+//instead od 2nd fuction put . take
+function appendDay(data5) {
+
+  const fiveArr =["1","2","3","4","5"]
+  let index = data5.length
+  const data = data5[index]
+
+
+
+  // $(".day2").append(data5.main.temp);
+  // $(".day3").append(data5.main.temp);
+  // $(".day4").append(data5.main.temp);
+  // $(".day5").append(data5.main.temp);
+
 }
 
 //NEW BUTTONS - call function inside event listener
@@ -144,3 +175,12 @@ function createButton(city) {
 //     $(".temp").text("Temperature (K) " + data.main.temp);
 // $(".tempC").text("Temperature (C) " + tempC.toFixed(2))
 //     // Log the resulting object
+
+
+
+//create a list <li>  of class day containers
+//append them ind
+//for each loop using list .for each (inside loop will have boxes)
+//all days can be complicated
+//eg - forecase box class. query selector all -- (for each, apepend. )
+// can use card body
