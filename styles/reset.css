@@ -41,6 +41,20 @@ line {
 
 .card-img-top{
     height: 100px;
-    width: 100px
+    width: 100px;
+    margin-top: 10%;
+    margin-left: 30%;
     
+}
+
+.image-size {
+    height: 60px;
+    width: 60px;
+ margin-left: 38%;
+ margin-top: 20%;
+
+    /* display: flex;
+    justify-content: center; */
+    
+
 }

@@ -1,6 +1,6 @@
 // API key
 var apiKey = "cead2a3023567e3257c8bf4d76c421c3";
-var date = dayjs().format("DD-MM-YYYY");
+var date = dayjs().format("DD/MM/YYYY");
 
 // collect user input for just the city name and store it in a variable,
 
@@ -67,9 +67,9 @@ let iconLink = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png
 
   $(".location").append(data.name + " ")
   $(".todaydate").append(date);
-  $(".temp").append("Temp: " + Math.floor(data.main.temp) + "ºC");
-  $(".wind").append ("Wind: " + data.wind.speed);
-  $(".humidity").append("Humidity: " + data.main.humidity);
+  $(".temp").append("Temperature: " + Math.floor(data.main.temp) + "ºC");
+  $(".wind").append ("Wind: " + (data.wind.speed) + " mph");
+  $(".humidity").append("Humidity: " + (data.main.humidity) + "%");
   // $('.card-img-top').append(`<img src="${iconLink}" />`)
   $('.card-img-top').attr('src', iconLink).attr('alt', 'Weather Icon');
   }
