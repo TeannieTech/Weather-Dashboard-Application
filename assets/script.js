@@ -62,86 +62,89 @@ function displayWeather(city) {
 }
 
 function showData(data) {
-// $(".todayimg").append(data.weather[0].icon);
+
+let iconLink = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
+
   $(".location").append(data.name + " ")
   $(".todaydate").append(date);
   $(".temp").append("Temp: " + Math.floor(data.main.temp) + "ºC");
   $(".wind").append ("Wind: " + data.wind.speed);
   $(".humidity").append("Humidity: " + data.main.humidity);
-
-
+  // $('.card-img-top').append(`<img src="${iconLink}" />`)
+  $('.card-img-top').attr('src', iconLink).attr('alt', 'Weather Icon');
+  }
 
 
 
 
   //5day data
   // $(".forecastimg1").append (data.list.[0]main.temp)
-}
 
-function showFiveDay(data5) {
+
+// function showFiveDay(data5) {
   // console.log(data5.list[0].main.temp, "show data");
 
-  console.log(data5, "5day data")
+//   console.log(data5, "5day data")
 
-  for (var i = 8; i < data5.list.length; i = i + 8) {
-    // console.log(data5.list[i].main.temp, "5days", data5.list[i].dt_txt);
-    console.log(dayjs.unix(data5.list[i].dt).format("DD MM YYYY"));
-    // let fiveDayArray = dayjs.unix(data5.list[i].dt).format("DD MM YYYY")
-    let fiveCard = ""
-    // for(let i=0;i<fiveDayArray.length;i++){
-  fiveCard+=`
-  <div class="col mb-2 five">
-  <div class="card future1 text-white">
-    <div class="card-body">
-      <h5 class="card-title day">date ${dayjs.unix(data5.list[i].dt).format("DD MM YYYY")}</h5>
-      <p class="card-text forecastimg2">img:</p>
-      <p class="card-text forecasttemp2">Temp:</p>
-      <p class="card-text forecastwind2">Wind:</p>
-      <p class="card-text forecasthumidity2">Humidity:</p>
-    </div>
-  </div>
-  </div>
-  `
-  $(".forecast").html(fiveCard)
-    }
-// appendDay(fiveDayArray)
-  // }
-}
+//   for (var i = 8; i < data5.list.length; i = i + 8) {
+//     // console.log(data5.list[i].main.temp, "5days", data5.list[i].dt_txt);
+//     console.log(dayjs.unix(data5.list[i].dt).format("DD MM YYYY"));
+//     // let fiveDayArray = dayjs.unix(data5.list[i].dt).format("DD MM YYYY")
+//     let fiveCard = ""
+//     // for(let i=0;i<fiveDayArray.length;i++){
+//   fiveCard+=`
+//   <div class="col mb-2 five">
+//   <div class="card future1 text-white">
+//     <div class="card-body">
+//       <h5 class="card-title day">date ${dayjs.unix(data5.list[i].dt).format("DD MM YYYY")}</h5>
+//       <p class="card-text forecastimg2">img:</p>
+//       <p class="card-text forecasttemp2">Temp:</p>
+//       <p class="card-text forecastwind2">Wind:</p>
+//       <p class="card-text forecasthumidity2">Humidity:</p>
+//     </div>
+//   </div>
+//   </div>
+//   `
+//   $(".forecast").html(fiveCard)
+//     }
+// // appendDay(fiveDayArray)
+//   // }
+// }
 
-//instead od 2nd fuction put . take
-function appendDay(data5) {
+// //instead od 2nd fuction put . take
+// function appendDay(data5) {
 
-  const fiveArr =["1","2","3","4","5"]
-  let index = data5.length
-  const data = data5[index]
+//   const fiveArr =["1","2","3","4","5"]
+//   let index = data5.length
+//   const data = data5[index]
 
 
 
-  // $(".day2").append(data5.main.temp);
-  // $(".day3").append(data5.main.temp);
-  // $(".day4").append(data5.main.temp);
-  // $(".day5").append(data5.main.temp);
+//   // $(".day2").append(data5.main.temp);
+//   // $(".day3").append(data5.main.temp);
+//   // $(".day4").append(data5.main.temp);
+//   // $(".day5").append(data5.main.temp);
 
-}
+// }
 
 //NEW BUTTONS - call function inside event listener
 
-function createButton(city) {
-  var newButtons = [city];
+// function createButton(city) {
+//   var newButtons = [city];
 
-  // movie buttins
-  for (var i = 0; i < newButtons.length; i++) {
-    var a = $("<button>");
-    // Adding a class
-    a.addClass("added-button");
-    // Adding a data-attribute with a value of the movie at index i
-    a.attr("added-button", newButtons[i]);
-    // Providing the button's text with a value of the movie at index i
-    a.text(newButtons[i]);
-    // Adding the button to the HTML
-    $("#history").append(a);
-  }
-}
+//   // movie buttins
+//   for (var i = 0; i < newButtons.length; i++) {
+//     var a = $("<button>");
+//     // Adding a class
+//     a.addClass("added-button");
+//     // Adding a data-attribute with a value of the movie at index i
+//     a.attr("added-button", newButtons[i]);
+//     // Providing the button's text with a value of the movie at index i
+//     a.text(newButtons[i]);
+//     // Adding the button to the HTML
+//     $("#history").append(a);
+//   }
+// }
 
 // addButton= $(“<button>”)
 // addButton.text(“testbutton”)

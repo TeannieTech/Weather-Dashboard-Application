@@ -1,11 +1,7 @@
-/* body {
-    background-image: url(/assets/backgrounglight.png);
-   background-size: cover;
-} */
 
 
 body {
-    background-image: url(/assets/backgroundlight.png);
+    background-image: url(../assets/backgroundlight.png);
     background-size: cover;
 }
 
@@ -30,25 +26,20 @@ body {
     background-color: rgb(83, 55, 224)
 }
 
-/* .fade {
-    background-color: linear-gradient(to right, rgb(244,242,242) 0%,rgb(53,49,74) 97%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-/* } */
 
 line {
     margin: 1rem 0;
     color: black
 }
 
-/* .mb-3 {
-    /* background-image: url(/assets/logolight.png);
-    background-repeat: no-repeat; */
-    /* background-size: 30%; */
-    /* height: 250px; */
-/* 
-}  */ 
 
 .added-button {
     margin-bottom: 10px;
 
 }
 
+
+.card-img-top{
+    height: 100px;
+    width: 100px
+}
