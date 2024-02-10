@@ -53,8 +53,9 @@ line {
  margin-left: 38%;
  margin-top: 20%;
 
-    /* display: flex;
-    justify-content: center; */
-    
+}
 
+.container {
+
+margin-top: 50px;
 }
